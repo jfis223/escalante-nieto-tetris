@@ -1,2 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+  <h3>Score: <span id="score">0</span></h3>
+  <button id="start-button"></button>
+
+<div class="grid">
+  <% square = '<div></div>' %>
+  <% def repeat(text, n=2) %>
+  <%  return text * n %>
+  <%  end  %>
+  <%= sanitize repeat(square, 200) %>
+  <% taken ='<div class="taken"></div>'  %>
+  <%= sanitize repeat(taken, 10) %>
+
+  <div class="mini-grid">
+    <%= sanitize repeat(square, 16) %>
+  </div>
+</div>
