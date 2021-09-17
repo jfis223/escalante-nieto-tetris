@@ -43,7 +43,7 @@
 <script>
 
   var $demo = $('#tetris').blockrain({
-    speed: 20,
+    speed: 10,
     theme: 'custom',
     playText: 'Escalante/Nieto Tetris',
     playButtonText: 'Jugar',
@@ -69,6 +69,9 @@ input.addEventListener("click", function(event) {
 var input2 = document.getElementById("down");
 input2.addEventListener("click", function(event) {
     document.dispatchEvent(new KeyboardEvent('keydown', {
+  'keyCode': '40'
+}));
+  document.dispatchEvent(new KeyboardEvent('keyup', {
   'keyCode': '40'
 }));
 });
