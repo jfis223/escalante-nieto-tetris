@@ -1,104 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <meta charset="utf-8" />
+  <head>
+    <meta charset="utf-8" />
 
-  <title>Escalante / Nieto Tetris</title>
+    <title>Escalante / Nieto Tetris</title>
 
-  <meta name="description" content="Tetris basado en la obra de Amalia Nieto y Laura Escalante. Parte de exposición del Teatro Solís." />
-  <meta name="keywords" content="js, jquery, game, plugin, html5, tetris, arte, escalante, nieto, pintura" />
-  <meta name="robots" content="INDEX, FOLLOW" />
-  <meta name="author" content="Joaquín Fischer" />
+    <meta
+      name="description"
+      content="Tetris basado en la obra de Amalia Nieto y Laura Escalante. Parte de exposición del Teatro Solís."
+    />
+    <meta
+      name="keywords"
+      content="js, jquery, game, plugin, html5, tetris, arte, escalante, nieto, pintura"
+    />
+    <meta name="robots" content="INDEX, FOLLOW" />
+    <meta name="author" content="Joaquín Fischer" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
+    />
 
-  <link href='http://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="src/blockrain.css">
+    <link
+      href="http://fonts.googleapis.com/css?family=Play:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="src/blockrain.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="game" id="tetris"></div>
 
-</head>
-<body>
-  <div class="wrapper">
-
-     <div class="game" id="tetris"></div>
-
-     <div class="controls">
-      <div class="line1">
-       <div class="btn" id="up"><img src="assets/images/arrow-up.png" alt="arrow-up"></div>
+      <div class="controls">
+        <div class="line1">
+          <div class="btn" id="up">
+            <img src="assets/images/arrow-up.png" alt="arrow-up" />
+          </div>
+        </div>
+        <div class="line2">
+          <div class="btn" id="left">
+            <img src="assets/images/arrow-left.png" alt="arrow-left" />
+          </div>
+          <div class="btn" id="down">
+            <img src="assets/images/arrow-down.png" alt="arrow-down" />
+          </div>
+          <div class="btn" id="right">
+            <img src="assets/images/arrow-right.png" alt="arrow-right" />
+          </div>
+        </div>
       </div>
-      <div class="line2">
-       <div class="btn" id="left"><img src="assets/images/arrow-left.png" alt="arrow-left"></div>
-        <div class="btn" id="down"><img src="assets/images/arrow-down.png" alt="arrow-down"></div>
-       <div class="btn" id="right"><img src="assets/images/arrow-right.png" alt="arrow-right"></div>
-     </div>
-     </div>
-</div>
- <img src="assets/images/teatro.png" alt="theatre" id="teatro">
+      <img src="assets/images/teatro.png" alt="theatre" id="teatro" />
+    </div>
 
-<script src="assets/js/jquery-1.11.1.min.js"></script>
-<script src="src/blockrain.jquery.libs.js"></script>
-<script src="src/blockrain.jquery.src.js"></script>
-<script src="src/blockrain.jquery.themes.js"></script>
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+    <script src="src/blockrain.jquery.libs.js"></script>
+    <script src="src/blockrain.jquery.src.js"></script>
+    <script src="src/blockrain.jquery.themes.js"></script>
 
-<script>
+    <script>
+      var $demo = $("#tetris").blockrain({
+        speed: 15,
+        theme: "custom",
+        playText: "Escalante/Nieto Tetris",
+        playButtonText: "Jugar",
+        gameOverText: "Game Over",
+        restartButtonText: "Reintentar",
+        scoreText: "Puntaje",
+      });
+    </script>
 
-  var $demo = $('#tetris').blockrain({
-    speed: 15,
-    theme: 'custom',
-    playText: 'Escalante/Nieto Tetris',
-    playButtonText: 'Jugar',
-    gameOverText: 'Game Over',
-    restartButtonText: 'Reintentar',
-    scoreText: 'Puntaje',
-  });
-</script>
+    <script>
+      var input = document.getElementById("up");
+      input.addEventListener("click", function (event) {
+        document.dispatchEvent(
+          new KeyboardEvent("keydown", {
+            keyCode: "38",
+          }),
+        );
+        document.dispatchEvent(
+          new KeyboardEvent("keyup", {
+            keyCode: "38",
+          }),
+        );
+      });
+    </script>
 
-<script>
-var input = document.getElementById("up");
-input.addEventListener("click", function(event) {
-    document.dispatchEvent(new KeyboardEvent('keydown', {
-  'keyCode': '38'
-}));
-  document.dispatchEvent(new KeyboardEvent('keyup', {
-  'keyCode': '38'
-}));
-});
-</script>
+    <script>
+      var input2 = document.getElementById("down");
+      input2.addEventListener("click", function (event) {
+        document.dispatchEvent(
+          new KeyboardEvent("keydown", {
+            keyCode: "40",
+          }),
+        );
+        document.dispatchEvent(
+          new KeyboardEvent("keyup", {
+            keyCode: "40",
+          }),
+        );
+      });
+    </script>
 
-<script>
-var input2 = document.getElementById("down");
-input2.addEventListener("click", function(event) {
-    document.dispatchEvent(new KeyboardEvent('keydown', {
-  'keyCode': '40'
-}));
-  document.dispatchEvent(new KeyboardEvent('keyup', {
-  'keyCode': '40'
-}));
-});
-</script>
+    <script>
+      var input3 = document.getElementById("left");
+      input3.addEventListener("click", function (event) {
+        document.dispatchEvent(
+          new KeyboardEvent("keydown", {
+            keyCode: "37",
+          }),
+        );
+        document.dispatchEvent(
+          new KeyboardEvent("keyup", {
+            keyCode: "37",
+          }),
+        );
+      });
+    </script>
 
-<script>
-var input3 = document.getElementById("left");
-input3.addEventListener("click", function(event) {
-    document.dispatchEvent(new KeyboardEvent('keydown', {
-  'keyCode': '37'
-}));
-  document.dispatchEvent(new KeyboardEvent('keyup', {
-  'keyCode': '37'
-}));
-});
-</script>
-
-<script>
-var input4 = document.getElementById("right");
-input4.addEventListener("click", function(event) {
-    document.dispatchEvent(new KeyboardEvent('keydown', {
-  'keyCode': '39'
-}));
-  document.dispatchEvent(new KeyboardEvent('keyup', {
-  'keyCode': '39'
-}));
-});
-</script>
-</body>
+    <script>
+      var input4 = document.getElementById("right");
+      input4.addEventListener("click", function (event) {
+        document.dispatchEvent(
+          new KeyboardEvent("keydown", {
+            keyCode: "39",
+          }),
+        );
+        document.dispatchEvent(
+          new KeyboardEvent("keyup", {
+            keyCode: "39",
+          }),
+        );
+      });
+    </script>
+  </body>
 </html>

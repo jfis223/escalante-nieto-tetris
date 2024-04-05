@@ -5,6 +5,9 @@
   color: #ffffff;
   font-size: 18px;
   line-height: 140%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 4px solid #ffffff;
 }
 
 /* Touch Controls */
@@ -15,7 +18,7 @@
   display: block;
   border-radius: 100%;
   border: 1px solid white;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   z-index: 10;
 
   -webkit-touch-callout: none;
@@ -28,7 +31,7 @@
   text-align: center;
 }
 .blockrain-touch:active {
-  background: rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .blockrain-touch-left {
@@ -121,7 +124,6 @@
   right: -8px;
 }
 
-
 /* Score */
 .blockrain-score-holder {
   position: absolute;
@@ -130,7 +132,7 @@
   text-align: right;
 }
 .blockrain-score-msg {
-  font-size: 14px;  
+  font-size: 14px;
   line-height: 100%;
   margin-bottom: 0.2em;
 }
@@ -140,25 +142,26 @@
 }
 
 /* Menu */
-.blockrain-start-holder, .blockrain-game-over-holder {
+.blockrain-start-holder,
+.blockrain-game-over-holder {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-
-  background-color: #746F70;
+  background-color: #ae7909;
   text-align: center;
 }
-.blockrain-start, .blockrain-game-over {
+.blockrain-start,
+.blockrain-game-over {
   position: absolute;
   top: 50%;
   width: 100%;
   transform: translateY(-50%);
 }
 
-.blockrain-start-msg, .blockrain-game-over-msg {
+.blockrain-start-msg,
+.blockrain-game-over-msg {
   font-size: 18px;
   margin-bottom: 30px;
 }
-
